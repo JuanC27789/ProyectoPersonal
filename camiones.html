@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Camiones - Grupo JC Transporte</title>
+    <link rel="stylesheet" href="camiones-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <i class="fas fa-truck"></i>
+                    <span>Grupo JC Transporte</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="camiones.html" class="nav-link active">Camiones</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Nuestra Flota de Camiones</h1>
+            <p class="hero-subtitle">Equipos de última generación para todo tipo de carga</p>
+        </div>
+    </section>
+
+    <!-- Flota Section -->
+    <section class="flota">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Modelos en Operación</h2>
+                <p class="section-subtitle">Contamos con los mejores camiones del mercado para garantizar la seguridad y eficiencia de tus envíos</p>
+            </div>
+
+            <div class="trucks-grid">
+                <!-- Camión 1: Freightliner Cascadia -->
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="images/freightliner-cascadia.jpg" alt="Freightliner Cascadia">
+                    </div>
+                    <div class="truck-content">
+                        <h3 class="truck-name">Freightliner Cascadia</h3>
+                        <p class="truck-description">Tractocamión de alta eficiencia con tecnología avanzada de seguridad y confort para el conductor.</p>
+                        <div class="truck-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>450-600 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>36,000 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diésel</span>
+                            </div>
+                        </div>
+                        <div class="truck-features">
+                            <span class="feature-tag"><i class="fas fa-check"></i> GPS</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Aire Acondicionado</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> ABS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camión 2: Kenworth T680 -->
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="images/t680.png" alt="Kenworth T680">
+                    </div>
+                    <div class="truck-content">
+                        <h3 class="truck-name">Kenworth T680</h3>
+                        <p class="truck-description">Diseño aerodinámico y motor potente, ideal para largas distancias con máxima eficiencia de combustible.</p>
+                        <div class="truck-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>455-510 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>36,000 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diésel</span>
+                            </div>
+                        </div>
+                        <div class="truck-features">
+                            <span class="feature-tag"><i class="fas fa-check"></i> GPS</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Control Crucero</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Suspensión Neumática</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camión 3: Volvo VNL -->
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="images/volvo-vnl.jpg" alt="Volvo VNL">
+                    </div>
+                    <div class="truck-content">
+                        <h3 class="truck-name">Volvo VNL</h3>
+                        <p class="truck-description">Tecnología sueca de vanguardia con sistemas de seguridad activa y pasiva de última generación.</p>
+                        <div class="truck-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>425-500 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>35,000 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diésel</span>
+                            </div>
+                        </div>
+                        <div class="truck-features">
+                            <span class="feature-tag"><i class="fas fa-check"></i> Sistema Anti-Colisión</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> GPS</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Frenos de Disco</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camión 4: International LT Series -->
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="images/international-serielt.jpg" alt="International LT">
+                    </div>
+                    <div class="truck-content">
+                        <h3 class="truck-name">International LT Series</h3>
+                        <p class="truck-description">Robustez y confiabilidad para operaciones intensivas con excelente relación costo-beneficio.</p>
+                        <div class="truck-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>400-475 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>34,000 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diésel</span>
+                            </div>
+                        </div>
+                        <div class="truck-features">
+                            <span class="feature-tag"><i class="fas fa-check"></i> GPS</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Cabina Espaciosa</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Bajo Mantenimiento</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camión 5: Mercedes-Benz Actros -->
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="images/mercedes-actros" alt="Mercedes-Benz Actros">
+                    </div>
+                    <div class="truck-content">
+                        <h3 class="truck-name">Mercedes-Benz Actros</h3>
+                        <p class="truck-description">Ingeniería alemana premium con sistemas inteligentes de conducción y máximo confort.</p>
+                        <div class="truck-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>430-530 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>36,000 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diésel</span>
+                            </div>
+                        </div>
+                        <div class="truck-features">
+                            <span class="feature-tag"><i class="fas fa-check"></i> Asistente de Frenado</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> GPS</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Control de Estabilidad</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camión 6: Peterbilt 579 -->
+                <div class="truck-card">
+                    <div class="truck-image">
+                        <img src="images/peterbilt-579.jpg" alt="Peterbilt 579">
+                    </div>
+                    <div class="truck-content">
+                        <h3 class="truck-name">Peterbilt 579</h3>
+                        <p class="truck-description">Diseño icónico americano con tecnología moderna y rendimiento excepcional en carretera.</p>
+                        <div class="truck-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>455-510 HP</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>36,000 kg</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-gas-pump"></i>
+                                <span>Diésel</span>
+                            </div>
+                        </div>
+                        <div class="truck-features">
+                            <span class="feature-tag"><i class="fas fa-check"></i> GPS</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Aerodinámico</span>
+                            <span class="feature-tag"><i class="fas fa-check"></i> Cabina Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-truck"></i>
+                    <h3 class="stat-number">50+</h3>
+                    <p>Camiones en Operación</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-tools"></i>
+                    <h3 class="stat-number">100%</h3>
+                    <p>Mantenimiento Preventivo</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 class="stat-number">24/7</h3>
+                    <p>Monitoreo GPS</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-award"></i>
+                    <h3 class="stat-number">15+</h3>
+                    <p>Años de Experiencia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Necesitas un Servicio de Transporte?</h2>
+                <p>Contáctanos hoy y descubre cómo nuestra flota puede ayudarte a mover tu carga de manera segura y eficiente</p>
+                <a href="index.html#contacto" class="btn-cta">Solicitar Cotización</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-truck"></i>
+                        <span>Grupo JC Transporte</span>
+                    </div>
+                    <p>Líderes en soluciones de transporte de carga pesada. Comprometidos con la excelencia y la satisfacción de nuestros clientes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index.html#servicios">Servicios</a></li>
+                        <li><a href="camiones.html">Camiones</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#">Carga General</a></li>
+                        <li><a href="#">Tractocamiones</a></li>
+                        <li><a href="#">Carga Consolidada</a></li>
+                        <li><a href="#">Entregas Express</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +507 6508-6654</li>
+                        <li><i class="fas fa-envelope"></i> contacto@grupojctransporte.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ciudad de Panamá</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Grupo JC Transporte. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="camiones-script.js"></script>
+</body>
+</html>
