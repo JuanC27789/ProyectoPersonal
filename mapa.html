@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobertura Nacional - Grupo JC Transporte</title>
+    <link rel="stylesheet" href="mapa-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="map-container">
+        <!-- Header -->
+        <header class="map-header">
+            <a href="home.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                Volver
+            </a>
+            <h1 class="map-title">
+                <i class="fas fa-map-marked-alt"></i>
+                Cobertura Nacional
+            </h1>
+            <div class="header-subtitle">Presencia en todo Panamá</div>
+        </header>
+
+        <!-- Mapa de Panamá -->
+        <div class="panama-map-wrapper">
+            <svg class="panama-map" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                <!-- Mapa de Panamá con forma realista -->
+                <defs>
+                    <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff6b35;stop-opacity:0.4" />
+                        <stop offset="50%" style="stop-color:#f7931e;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#004e89;stop-opacity:0.4" />
+                    </linearGradient>
+                    <filter id="shadow">
+                        <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#ff6b35" flood-opacity="0.5"/>
+                    </filter>
+                </defs>
+                
+                <!-- Forma de Panamá (estrecha, alargada, forma de S) -->
+                <path class="panama-outline" d="
+                    M 80,220
+                    C 100,200 130,190 160,195
+                    C 190,200 220,205 250,200
+                    C 280,195 310,190 340,195
+                    C 370,200 400,210 430,205
+                    C 460,200 490,195 520,200
+                    C 550,205 580,215 610,210
+                    C 640,205 670,200 700,205
+                    C 730,210 760,220 790,215
+                    C 820,210 850,205 880,210
+                    C 910,215 940,225 970,220
+                    C 1000,215 1030,210 1060,220
+                    C 1080,225 1100,235 1110,250
+                    C 1115,260 1115,270 1110,280
+                    C 1105,290 1095,295 1080,295
+                    C 1050,295 1020,290 990,295
+                    C 960,300 930,310 900,305
+                    C 870,300 840,290 810,295
+                    C 780,300 750,310 720,305
+                    C 690,300 660,290 630,295
+                    C 600,300 570,310 540,305
+                    C 510,300 480,290 450,295
+                    C 420,300 390,310 360,305
+                    C 330,300 300,290 270,295
+                    C 240,300 210,310 180,305
+                    C 150,300 120,290 90,285
+                    C 70,280 60,270 60,255
+                    C 60,245 65,235 75,228
+                    Z
+                " fill="url(#mapGradient)" stroke="#ff6b35" stroke-width="4" stroke-linejoin="round" filter="url(#shadow)"/>
+
+                <!-- Marcadores de ubicación -->
+                <!-- David (Chiriquí - Oeste) -->
+                <g class="location-marker" data-location="David">
+                    <circle cx="180" cy="250" r="10" class="marker-pulse"/>
+                    <circle cx="180" cy="250" r="7" class="marker-dot"/>
+                    <circle cx="180" cy="250" r="18" class="marker-ring"/>
+                </g>
+
+                <!-- Santiago (Veraguas - Centro-Oeste) -->
+                <g class="location-marker" data-location="Santiago">
+                    <circle cx="420" cy="250" r="10" class="marker-pulse"/>
+                    <circle cx="420" cy="250" r="7" class="marker-dot"/>
+                    <circle cx="420" cy="250" r="18" class="marker-ring"/>
+                </g>
+
+                <!-- Chitré (Herrera - Península Azuero) -->
+                <g class="location-marker" data-location="Chitré">
+                    <circle cx="540" cy="305" r="10" class="marker-pulse"/>
+                    <circle cx="540" cy="305" r="7" class="marker-dot"/>
+                    <circle cx="540" cy="305" r="18" class="marker-ring"/>
+                </g>
+
+                <!-- Penonomé (Coclé - Centro) -->
+                <g class="location-marker" data-location="Penonomé">
+                    <circle cx="640" cy="245" r="10" class="marker-pulse"/>
+                    <circle cx="640" cy="245" r="7" class="marker-dot"/>
+                    <circle cx="640" cy="245" r="18" class="marker-ring"/>
+                </g>
+
+                <!-- Ciudad de Panamá (Este) -->
+                <g class="location-marker" data-location="Ciudad de Panamá">
+                    <circle cx="900" cy="250" r="10" class="marker-pulse"/>
+                    <circle cx="900" cy="250" r="7" class="marker-dot"/>
+                    <circle cx="900" cy="250" r="18" class="marker-ring"/>
+                </g>
+
+                <!-- Colón (Norte-Este) -->
+                <g class="location-marker" data-location="Colón">
+                    <circle cx="950" cy="215" r="10" class="marker-pulse"/>
+                    <circle cx="950" cy="215" r="7" class="marker-dot"/>
+                    <circle cx="950" cy="215" r="18" class="marker-ring"/>
+                </g>
+            </svg>
+
+            <!-- Tooltip para mostrar nombre de ubicación -->
+            <div class="location-tooltip" id="locationTooltip"></div>
+        </div>
+
+        <!-- Lista de ubicaciones -->
+        <div class="locations-grid">
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3>Ciudad de Panamá</h3>
+                <p>Oficina Central</p>
+                <div class="location-details">
+                    <i class="fas fa-phone"></i>
+                    <span>+507 123-4567</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3>Colón</h3>
+                <p>Zona Libre</p>
+                <div class="location-details">
+                    <i class="fas fa-phone"></i>
+                    <span>+507 234-5678</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3>David</h3>
+                <p>Chiriquí</p>
+                <div class="location-details">
+                    <i class="fas fa-phone"></i>
+                    <span>+507 345-6789</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3>Santiago</h3>
+                <p>Veraguas</p>
+                <div class="location-details">
+                    <i class="fas fa-phone"></i>
+                    <span>+507 456-7890</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3>Chitré</h3>
+                <p>Herrera</p>
+                <div class="location-details">
+                    <i class="fas fa-phone"></i>
+                    <span>+507 567-8901</span>
+                </div>
+            </div>
+
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3>Penonomé</h3>
+                <p>Coclé</p>
+                <div class="location-details">
+                    <i class="fas fa-phone"></i>
+                    <span>+507 678-9012</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="map-footer">
+            <p>&copy; 2025 Grupo JC Transporte - Cobertura en todo Panamá</p>
+        </footer>
+    </div>
+
+    <script src="mapa-script.js"></script>
+</body>
+</html>

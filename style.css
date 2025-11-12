@@ -6,9 +6,9 @@
 }
 
 :root {
-    --primary-color: #ff6b35;
-    --secondary-color: #004e89;
-    --accent-color: #f7931e;
+    --primary-color: #ff8c00;
+    --secondary-color: #ff8c00;
+    --accent-color: #ffa500;
     --dark-color: #1a1a2e;
     --darker-color: #0f0f1e;
     --light-color: #f8f9fa;
@@ -100,31 +100,34 @@ body {
     position: relative;
     padding: 8px 16px;
     border-radius: 8px;
-    background: rgba(255, 107, 53, 0.15);
-    border: 1px solid rgba(255, 107, 53, 0.3);
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: 1px solid rgba(192, 57, 43, 0.8);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background: var(--white);
     transition: var(--transition);
     border-radius: 2px;
 }
 
 .nav-link:hover {
     color: var(--white);
-    background: rgba(255, 107, 53, 0.4);
-    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #c0392b, #a93226);
+    border-color: #a93226;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-link:hover::after {
-    width: 80%;
+    width: 60%;
 }
 
 .hamburger {
@@ -537,17 +540,23 @@ body {
 .btn-submit {
     width: 100%;
     padding: 18px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, #ff8c00, #ffa500);
     color: var(--white);
     border: none;
     border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.3);
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
 }
 
 .btn-submit::before {

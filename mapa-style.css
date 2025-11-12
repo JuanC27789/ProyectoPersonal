@@ -1,0 +1,342 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-red: #ff6b35;
+    --dark-red: #e85d04;
+    --accent-orange: #f7931e;
+    --dark-bg: #0f0f1e;
+    --darker-bg: #1a1a2e;
+    --light-text: #ffffff;
+    --gray-text: #e0e0e0;
+    --accent: #ffa94d;
+    --blue-accent: #004e89;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 50%, var(--blue-accent) 100%);
+    color: var(--light-text);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Contenedor Principal */
+.map-container {
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* Header */
+.map-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    animation: fadeInDown 0.8s ease;
+}
+
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(247, 147, 30, 0.2));
+    border: 2px solid var(--primary-red);
+    border-radius: 30px;
+    color: var(--light-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+    transform: translateX(-5px);
+    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+}
+
+.map-title {
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #ffffff, var(--primary-red), var(--accent-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 5px 15px rgba(255, 107, 53, 0.5));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.map-title i {
+    color: var(--primary-red);
+    filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.8));
+}
+
+.header-subtitle {
+    font-size: 1.3rem;
+    color: var(--gray-text);
+    letter-spacing: 2px;
+}
+
+/* Mapa de Panamá */
+.panama-map-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(0, 78, 137, 0.05));
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    border: 3px solid rgba(255, 107, 53, 0.3);
+    box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: fadeInUp 1s ease;
+}
+
+.panama-map {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.panama-outline {
+    pointer-events: none;
+}
+
+/* Marcadores de ubicación */
+.location-marker {
+    cursor: pointer;
+    will-change: transform;
+}
+
+.marker-dot {
+    fill: var(--primary-red);
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 1));
+    pointer-events: none;
+}
+
+.marker-pulse {
+    fill: var(--accent-orange);
+    opacity: 0.6;
+    animation: pulse 2s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.marker-ring {
+    fill: none;
+    stroke: var(--primary-red);
+    stroke-width: 2;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, stroke-width 0.3s ease;
+}
+
+.location-marker:hover .marker-ring {
+    opacity: 1;
+    stroke-width: 3;
+}
+
+.location-marker:hover .marker-dot {
+    filter: drop-shadow(0 0 20px rgba(255, 107, 53, 1));
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(1.5);
+    }
+}
+
+/* Tooltip */
+.location-tooltip {
+    position: absolute;
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+    color: var(--light-text);
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+.location-tooltip.active {
+    opacity: 1;
+}
+
+/* Grid de ubicaciones */
+.locations-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    animation: fadeInUp 1.2s ease;
+}
+
+.location-card {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(0, 78, 137, 0.1));
+    border: 2px solid rgba(255, 107, 53, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.location-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(0, 78, 137, 0.15));
+    border-color: var(--primary-red);
+    box-shadow: 0 20px 50px rgba(255, 107, 53, 0.5);
+}
+
+.location-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary-red), var(--accent-orange));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--light-text);
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+    transition: all 0.3s ease;
+}
+
+.location-card:hover .location-icon {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.8);
+}
+
+.location-card h3 {
+    font-size: 1.5rem;
+    color: var(--light-text);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.location-card p {
+    color: var(--gray-text);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.location-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(255, 107, 53, 0.1);
+    border-radius: 10px;
+    color: var(--accent-orange);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.location-card:hover .location-details {
+    background: rgba(255, 107, 53, 0.2);
+    color: var(--primary-red);
+}
+
+/* Footer */
+.map-footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(15, 15, 30, 0.8));
+    backdrop-filter: blur(15px);
+    border-top: 3px solid var(--primary-red);
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .map-title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    .back-button {
+        position: static;
+        margin-bottom: 20px;
+        display: inline-flex;
+    }
+
+    .panama-map-wrapper {
+        padding: 20px;
+    }
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-title {
+        font-size: 1.5rem;
+    }
+
+    .location-card {
+        padding: 20px;
+    }
+
+    .location-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
